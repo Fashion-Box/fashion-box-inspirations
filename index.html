@@ -55,7 +55,7 @@ body{
   position:sticky; top:0; z-index:50;
 }
 .header .brand{display:flex;align-items:center;gap:12px;font-family:'Playfair Display',serif;color:var(--pink);font-size:1.1rem}
-.header a.cta{background:var(--pink);color:#fff;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:600;box-shadow:var(--shadow)}
+.header a.cta{background:var(--pink);color:#fff;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:600;box-shadow:var(--shadow);white-space:nowrap}
 
 /* Hero */
 .hero{
@@ -94,7 +94,7 @@ body{
 
 /* Quote wall */
 .quote-wall{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px}
-.quote{background:linear-gradient(180deg,#fff,#fffaf7);padding:18px;border-radius:14px;box-shadow:var(--shadow);font-family:'Playfair Display',serif;color:var(--text-dark);font-size:1.05rem;text-align:center}
+.quote{background:linear-gradient(180deg,#fff,#fffaf7);padding:18px;border-radius:14px;box-shadow:var(--shadow);font-family:'Playfair Display',serif;color:var(--text-dark);font-size:1.05rem;text-align[...]
 
 /* Workshops & Events (replacement section) */
 .events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:18px}
@@ -114,6 +114,21 @@ footer a{color:#fff;text-decoration:none}
 @media(max-width:900px){
   .cta-panel{flex-direction:column;align-items:stretch;text-align:center}
   .cta-panel .left{max-width:100%}
+}
+
+/* Make the header CTA smaller on narrow screens so it fits without wrapping */
+@media (max-width:480px) {
+  .header {
+    padding:12px 14px;
+  }
+  .header .brand{font-size:.98rem;gap:10px}
+  .header .brand img{width:34px}
+  .header a.cta{
+    padding:6px 10px;
+    font-size:.9rem;
+    border-radius:999px;
+    box-shadow:0 12px 28px rgba(0,0,0,.06);
+  }
 }
 </style>
 </head>
