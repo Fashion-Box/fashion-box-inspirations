@@ -94,7 +94,7 @@ body{
 
 /* Quote wall */
 .quote-wall{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px}
-.quote{background:linear-gradient(180deg,#fff,#fffaf7);padding:18px;border-radius:14px;box-shadow:var(--shadow);font-family:'Playfair Display',serif;color:var(--text-dark);font-size:1.05rem;text-align[...]
+.quote{background:linear-gradient(180deg,#fff,#fffaf7);padding:18px;border-radius:14px;box-shadow:var(--shadow);font-family:'Playfair Display',serif;color:var(--text-dark);font-size:1.05rem;text-align:left;padding:20px}
 
 /* Workshops & Events (replacement section) */
 .events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:18px}
@@ -109,6 +109,35 @@ body{
 /* Footer */
 footer{background:var(--pink);color:#fff;padding:36px 0;margin-top:40px;text-align:center}
 footer a{color:#fff;text-decoration:none}
+
+/* Themed footer nav to keep the links on-theme */
+.footer-nav{
+  margin-top:12px;
+  display:inline-flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  font-weight:600;
+}
+.footer-nav a{
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+  padding:8px 12px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow:0 8px 18px rgba(0,0,0,.06);
+  transition:transform .18s ease,background .18s ease;
+}
+.footer-nav a:hover{
+  background:rgba(255,255,255,0.16);
+  transform:translateY(-3px);
+}
+.footer-nav .sep{
+  color:rgba(255,255,255,.9);
+  margin:0 6px;
+}
 
 /* Responsive tweaks */
 @media(max-width:900px){
@@ -129,6 +158,9 @@ footer a{color:#fff;text-decoration:none}
     border-radius:999px;
     box-shadow:0 12px 28px rgba(0,0,0,.06);
   }
+
+  /* Slightly smaller footer link pills on very small screens */
+  .footer-nav a{padding:6px 10px;font-size:.95rem}
 }
 </style>
 </head>
@@ -262,8 +294,14 @@ footer a{color:#fff;text-decoration:none}
     <div style="max-width:900px;margin:auto">
       <strong>Fashion Box</strong>
       <div style="margin-top:8px;color:rgba(255,255,255,.9)">Luxury Pink Fashion — slow, considered and crafted with care.</div>
-      <div style="margin-top:12px;opacity:.9">
-        <a href="https://fashionbox-crafted-for-your-vibe.github.io/Fashion-Box/">Return to Fashion Box</a> · <a href="#trends">Trends</a> · <a href="#gallery">Gallery</a>
+
+      <!-- Replaced inline links with themed footer-nav to keep styling consistent -->
+      <div class="footer-nav" aria-label="Footer navigation">
+        <a href="https://fashionbox-crafted-for-your-vibe.github.io/Fashion-Box/">Return to Fashion Box</a>
+        <span class="sep">·</span>
+        <a href="#trends">Trends</a>
+        <span class="sep">·</span>
+        <a href="#gallery">Gallery</a>
       </div>
     </div>
     <div style="margin-top:18px;font-size:.9rem;opacity:.9">© <span id="year"></span> Fashion Box</div>
